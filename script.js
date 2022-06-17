@@ -26,12 +26,12 @@ this.founder = founder;
 }
 
 const zel = new Website('Ahkal', 5, ['Tashika', 'Ahkal']);
-// console.log(zel);
+console.log(zel);
 
 // This is inheriting from the root object.
 // console.log('toString' in website); // true;
 // console.log(website.hasOwnProperty('toString')); // false
-// hasOwnProperty, checks this specific object.
+// hasOwnProperty, checks It's specific object.
 
 // website.sayHello = () =>{
 // console.log('Hi!');
@@ -100,3 +100,14 @@ console.log(Object.isFrozen(newMe)); // T
 // Seal
 Object.seal(newMe);
 console.log(Object.isSealed(newMe)); // T
+
+finalObject = {
+  final: 'Destination',
+  distance: 'Mar 13:32'
+};
+
+console.log(finalObject. toString());
+finalObject.toString = function(){
+  return 'Later days, Last days.'
+}
+console.log(finalObject.toString());
