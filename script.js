@@ -82,3 +82,21 @@ for (const key in obj) {
   console.log(key);
 }
 
+const newMe = {
+  original: 12345678,
+}
+
+// Doesn't copy over proto from obj.
+Object.assign(newMe, obj);
+console.log(newMe);
+
+// Make object immutable.
+// Freeze
+Object.freeze(newMe);
+newMe.original = 789;
+console.log(newMe);
+console.log(Object.isFrozen(newMe)); // T
+
+// Seal
+Object.seal(newMe);
+console.log(Object.isSealed(newMe)); // T
